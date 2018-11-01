@@ -126,4 +126,9 @@ class Article extends \yii\db\ActiveRecord
         }
     }
 
+    public function clearCurrentTags()
+    {
+        ArticleTag::deleteAll(['article_id' => $this->id]);
+    }
+
 }
