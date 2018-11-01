@@ -116,4 +116,14 @@ class Article extends \yii\db\ActiveRecord
         return ArrayHelper::getColumn($selectedTags, 'id');
     }
 
+    public function saveTags($tags)
+    {
+        if (is_array($tags)) {
+            foreach ($tags as $tag_id) {
+                $tag = Tag::findOne($tag_id);
+                $this->link('tags', $tag);
+            }
+        }
+    }
+
 }
