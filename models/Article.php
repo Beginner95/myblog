@@ -119,6 +119,7 @@ class Article extends \yii\db\ActiveRecord
     public function saveTags($tags)
     {
         if (is_array($tags)) {
+            $this->clearCurrentTags();
             foreach ($tags as $tag_id) {
                 $tag = Tag::findOne($tag_id);
                 $this->link('tags', $tag);
