@@ -65,6 +65,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Display single page
+     *
+     * @return string
+     */
+    public function actionView()
+    {
+        return $this->render('single');
+    }
+
+    /**
      * Login action.
      *
      * @return Response|string
