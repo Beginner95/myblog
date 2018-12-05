@@ -75,6 +75,16 @@ class SiteController extends Controller
     }
 
     /**
+     * Display category page
+     *
+     * @return string
+     */
+    public function actionCategory()
+    {
+        return $this->render('category');
+    }
+
+    /**
      * Login action.
      *
      * @return Response|string
