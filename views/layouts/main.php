@@ -33,7 +33,7 @@ PublicAsset::register($this);
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="index.html">Future Imperfect</a></h1>
+        <h1><a href="/">Web Vaha</a></h1>
         <nav class="links">
             <ul>
                 <li><a href="#">Lorem</a></li>
@@ -101,7 +101,8 @@ PublicAsset::register($this);
         <!-- Actions -->
         <section>
             <ul class="actions stacked">
-                <li><a href="#" class="button large fit">Log In</a></li>
+                <li><a href="/site/login" class="button large fit">Log In</a></li>
+                <li><a href="/site/signup" class="button large fit">Register</a></li>
             </ul>
         </section>
 
@@ -116,10 +117,10 @@ PublicAsset::register($this);
 
         <!-- Intro -->
         <section id="intro">
-            <a href="#" class="logo"><img src="/public/images/logo.jpg" alt="" /></a>
+            <a href="/" class="logo"><img src="/public/images/logo.jpg" alt="" /></a>
             <header>
-                <h2>Future Imperfect</h2>
-                <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+                <h2>Web Vaha</h2>
+                <p>FREE PROGRAMMAN BLOG</p>
             </header>
         </section>
 
