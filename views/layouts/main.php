@@ -225,7 +225,7 @@ PublicAsset::register($this);
         <!-- About -->
         <section class="blurb">
             <h2>About</h2>
-            <p>Mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl. Sed mattis nunc id lorem euismod amet placerat. Vivamus porttitor magna enim, ac accumsan tortor cursus at phasellus sed ultricies.</p>
+            <p>My name is Vaharsolta Nesirhaev; I'am a lifelong programmer web developer.</p>
             <ul class="actions">
                 <li><a href="#" class="button">Learn More</a></li>
             </ul>
@@ -234,11 +234,10 @@ PublicAsset::register($this);
         <!-- Footer -->
         <section id="footer">
             <ul class="icons">
-                <li><a href="#" class="fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="fa-rss"><span class="label">RSS</span></a></li>
-                <li><a href="#" class="fa-envelope"><span class="label">Email</span></a></li>
+                <li><a href="https://twitter.com/Beginner95" class="fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/vakharsolt.nesirkhaev" class="fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/webvaha/" class="fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://vk.com/beginner95" class="fa-vk"><span class="label">RSS</span></a></li>
             </ul>
             <p class="copyright">&copy; MyBlog <a href="#">Blog.WebVaha</a>. MySite: <a href="#">WebVaha</a>.</p>
         </section>
