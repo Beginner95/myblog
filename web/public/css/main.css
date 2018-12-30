@@ -1853,6 +1853,18 @@ input, select, textarea {
 		}
 
 /* Button */
+	.active {
+		box-shadow: inset 0 0 0 1px #2ebaae;
+
+		padding: 0 !important;
+		margin-left: 1em;
+	}
+
+	.active .button {
+		color: #2ebaae !important;
+	}
+
+
 
 	input[type="submit"],
 	input[type="reset"],
