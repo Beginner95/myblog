@@ -16,7 +16,7 @@ $this->title = 'My Yii Application';
                     <a href="#" class="author"><span class="name">Jane Doe</span><img src="/public/images/avatar.jpg" alt="" /></a>
                 </div>
             </header>
-            <a href="single.html" class="image featured"><img src="/public/images/pic01.jpg" alt="" /></a>
+            <a href="single.html" class="image featured"><img src="/uploads/<?php echo $article->image; ?>" alt="" /></a>
             <p><?php echo $article->content; ?></p>
             <footer>
                 <ul class="actions">
