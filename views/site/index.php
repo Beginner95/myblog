@@ -2,6 +2,8 @@
 
 /* @var $this yii\web\View */
 
+use yii\widgets\LinkPager;
+
 $this->title = 'My Yii Application';
 ?>
     <?php foreach ($articles as $article) : ?>
@@ -28,11 +30,32 @@ $this->title = 'My Yii Application';
             </footer>
         </article>
     <?php endforeach; ?>
-
-    <!-- Pagination -->
-    <ul class="actions pagination">
-        <li><a href="" class="disabled button large previous">Previous Page</a></li>
-        <li><a href="#" class="button large next">Next Page</a></li>
-    </ul>
+<?php
+echo LinkPager::widget([
+    'pagination' => $pagination,
+    //Css option for container
+    'options' => ['class' => 'actions pagination'],
+    //First option value
+//    'firstPageLabel' => 'first',
+    //Last option value
+//    'lastPageLabel' => 'last',
+    //Previous option value
+    'prevPageLabel' => 'PREVIOUS PAGE',
+    //Next option value
+    'nextPageLabel' => 'Next Page',
+    //Current Active option value
+    'activePageCssClass' => 'active',
+    //Max count of allowed options
+//    'maxButtonCount' => 8,
+    // Css for each options. Links
+    'linkOptions' => ['class' => 'button '],
+//    'disabledPageCssClass' => '',
+    // Customzing CSS class for navigating link
+//    'prevPageCssClass' => '',
+//    'nextPageCssClass' => '',
+//    'firstPageCssClass' => 'p-first',
+//    'lastPageCssClass' => 'p-last',
+]);
+?>
 
 
