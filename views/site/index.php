@@ -31,6 +31,33 @@ $this->title = 'My Yii Application';
             </footer>
         </article>
     <?php endforeach; ?>
+    <?php
+        echo LinkPager::widget([
+            'pagination' => $pagination,
+            //Css option for container
+            'options' => ['class' => 'actions pagination'],
+            //First option value
+    //    'firstPageLabel' => 'first',
+            //Last option value
+    //    'lastPageLabel' => 'last',
+            //Previous option value
+            'prevPageLabel' => 'PREVIOUS PAGE',
+            //Next option value
+            'nextPageLabel' => 'Next Page',
+            //Current Active option value
+            'activePageCssClass' => 'active',
+            //Max count of allowed options
+    //    'maxButtonCount' => 8,
+            // Css for each options. Links
+            'linkOptions' => ['class' => 'button '],
+    //    'disabledPageCssClass' => '',
+            // Customzing CSS class for navigating link
+    //    'prevPageCssClass' => '',
+    //    'nextPageCssClass' => '',
+    //    'firstPageCssClass' => 'p-first',
+    //    'lastPageCssClass' => 'p-last',
+        ]);
+    ?>
 </div>
 
 <!-- Sidebar -->
@@ -112,33 +139,6 @@ $this->title = 'My Yii Application';
         <p class="copyright">&copy; MyBlog <a href="#">Blog.WebVaha</a>. MySite: <a href="#">WebVaha</a>.</p>
     </section>
 </section>
-<?php
-echo LinkPager::widget([
-    'pagination' => $pagination,
-    //Css option for container
-    'options' => ['class' => 'actions pagination'],
-    //First option value
-//    'firstPageLabel' => 'first',
-    //Last option value
-//    'lastPageLabel' => 'last',
-    //Previous option value
-    'prevPageLabel' => 'PREVIOUS PAGE',
-    //Next option value
-    'nextPageLabel' => 'Next Page',
-    //Current Active option value
-    'activePageCssClass' => 'active',
-    //Max count of allowed options
-//    'maxButtonCount' => 8,
-    // Css for each options. Links
-    'linkOptions' => ['class' => 'button '],
-//    'disabledPageCssClass' => '',
-    // Customzing CSS class for navigating link
-//    'prevPageCssClass' => '',
-//    'nextPageCssClass' => '',
-//    'firstPageCssClass' => 'p-first',
-//    'lastPageCssClass' => 'p-last',
-]);
-?>
 
 
 
