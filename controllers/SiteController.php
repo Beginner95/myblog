@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Article;
+use app\models\Category;
 use Yii;
 use yii\data\Pagination;
 use yii\filters\AccessControl;
@@ -75,12 +76,14 @@ class SiteController extends Controller
 
         $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
         $recent = Article::find()->orderBy('date asc')->limit(5)->all();
+        $categories = Category::find()->all();
 
         return $this->render('index', [
             'articles' => $articles,
             'pagination' => $pagination,
             'popular' => $popular,
-            'recent' => $recent
+            'recent' => $recent,
+            'categories' => $categories
         ]);
     }
 
