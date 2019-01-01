@@ -72,12 +72,15 @@ class SiteController extends Controller
         $articles = $query->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
+
         $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
+        $recent = Article::find()->orderBy('date asc')->limit(5)->all();
 
         return $this->render('index', [
             'articles' => $articles,
             'pagination' => $pagination,
-            'popular' => $popular
+            'popular' => $popular,
+            'recent' => $recent
         ]);
     }
 
