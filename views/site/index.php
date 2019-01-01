@@ -46,6 +46,7 @@ $this->title = 'My Yii Application';
     </section>
 
     <!-- Mini Posts -->
+    <h2>Popular Posts</h2>
     <section>
         <div class="mini-posts">
             <?php foreach ($popular as $article) : ?>
@@ -62,6 +63,7 @@ $this->title = 'My Yii Application';
     </section>
 
     <!-- Posts List -->
+    <h2>Recent posts</h2>
     <section>
         <ul class="posts">
             <?php foreach ($recent as $article) : ?>
@@ -78,6 +80,7 @@ $this->title = 'My Yii Application';
         </ul>
     </section>
 
+    <h2>Categories</h2>
     <section>
         <ul class="categories">
             <?php foreach ($categories as $category) : ?>
