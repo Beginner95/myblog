@@ -78,6 +78,17 @@ $this->title = 'My Yii Application';
         </ul>
     </section>
 
+    <section>
+        <ul class="categories">
+            <?php foreach ($categories as $category) : ?>
+                <li>
+                    <a href="#"><?php echo $category->title; ?></a>
+                    <span>(<?php echo $category->getArticles()->count(); ?>)</span>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
+
     <!-- About -->
     <section class="blurb">
         <h2>About</h2>
