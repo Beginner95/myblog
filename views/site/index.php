@@ -15,7 +15,7 @@ $this->title = 'My Yii Application';
                     <p><?php echo $article->description; ?></p>
                 </div>
                 <div class="meta">
-                    <time class="published" datetime="2015-11-01"><?php echo $article->date; ?></time>
+                    <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                     <a href="#" class="author"><span class="name">Jane Doe</span><img src="/public/images/avatar.jpg" alt="" /></a>
                 </div>
             </header>
@@ -80,7 +80,7 @@ $this->title = 'My Yii Application';
                 <article class="mini-post">
                     <header>
                         <h3><a href="single.html"><?php echo $article->title; ?></a></h3>
-                        <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->date; ?></time>
+                        <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                         <a href="#" class="author"><img src="/public/images/avatar.jpg" alt="" /></a>
                     </header>
                     <a href="single.html" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
@@ -98,7 +98,7 @@ $this->title = 'My Yii Application';
                     <article>
                         <header>
                             <h3><a href="single.html"><?php echo $article->title; ?></a></h3>
-                            <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->date; ?></time>
+                            <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                         </header>
                         <a href="single.html" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
                     </article>
