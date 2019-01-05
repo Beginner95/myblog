@@ -160,4 +160,9 @@ class Article extends \yii\db\ActiveRecord
         return Article::find()->orderBy('viewed desc')->limit(3)->all();
     }
 
+    public static function getRecent()
+    {
+        return Article::find()->orderBy('date asc')->limit(5)->all();
+    }
+
 }
