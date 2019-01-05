@@ -113,7 +113,7 @@ $this->title = 'My Yii Application';
             <?php foreach ($categories as $category) : ?>
                 <li>
                     <a href="#"><?php echo $category->title; ?></a>
-                    <span>(<?php echo $category->getArticles()->count(); ?>)</span>
+                    <span>(<?php echo $category->getArticlesCount(); ?>)</span>
                 </li>
             <?php endforeach; ?>
         </ul>
