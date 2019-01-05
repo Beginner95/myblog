@@ -155,4 +155,9 @@ class Article extends \yii\db\ActiveRecord
         return $data;
     }
 
+    public static function getPopular()
+    {
+        return Article::find()->orderBy('viewed desc')->limit(3)->all();
+    }
+
 }
