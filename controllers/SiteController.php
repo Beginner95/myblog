@@ -66,7 +66,8 @@ class SiteController extends Controller
     {
         $data = Article::getAll();
 
-        $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
+        $popular = Article::getPopular();
+
         $recent = Article::find()->orderBy('date asc')->limit(5)->all();
         $categories = Category::find()->all();
 
