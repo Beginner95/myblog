@@ -64,23 +64,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $query = Article::find();
-
-        $count = $query->count();
-
-        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 5]);
-
-        $articles = $query->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->all();
+        $data = Article::getAll();
 
         $popular = Article::find()->orderBy('viewed desc')->limit(3)->all();
         $recent = Article::find()->orderBy('date asc')->limit(5)->all();
         $categories = Category::find()->all();
 
         return $this->render('index', [
-            'articles' => $articles,
-            'pagination' => $pagination,
+            'articles' => $data['articles'],
+            'pagination' => $data['pagination'],
             'popular' => $popular,
             'recent' => $recent,
             'categories' => $categories
