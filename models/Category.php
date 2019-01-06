@@ -50,4 +50,9 @@ class Category extends \yii\db\ActiveRecord
     {
         return $this->getArticles()->count();
     }
+
+    public static function getAll()
+    {
+        return Category::find()->all();
+    }
 }
