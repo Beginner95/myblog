@@ -81,11 +81,15 @@ class SiteController extends Controller
     /**
      * Display single page
      *
+     * @param $id
      * @return string
      */
-    public function actionView()
+    public function actionView($id)
     {
-        return $this->render('single');
+        $article = Article::findOne($id);
+        return $this->render('single', [
+            'article' => $article
+        ]);
     }
 
     /**
