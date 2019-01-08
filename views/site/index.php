@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
 $this->title = 'My Yii Application';
@@ -11,7 +12,7 @@ $this->title = 'My Yii Application';
         <article class="post">
             <header>
                 <div class="title">
-                    <h2><a href="single.html"><?php echo $article->title; ?></a></h2>
+                    <h2><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h2>
                     <p><?php echo $article->description; ?></p>
                 </div>
                 <div class="meta">
@@ -19,11 +20,11 @@ $this->title = 'My Yii Application';
                     <a href="#" class="author"><span class="name">Jane Doe</span><img src="/public/images/avatar.jpg" alt="" /></a>
                 </div>
             </header>
-            <a href="single.html" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
+            <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
             <p><?php echo $article->content; ?></p>
             <footer>
                 <ul class="actions">
-                    <li><a href="single.html" class="button large">Continue Reading</a></li>
+                    <li><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="button large">Continue Reading</a></li>
                 </ul>
                 <ul class="stats">
                     <li><a href="#" class="icon fa-eye"><?php echo (int)$article->viewed; ?></a></li>
@@ -79,11 +80,11 @@ $this->title = 'My Yii Application';
             <?php foreach ($popular as $article) : ?>
                 <article class="mini-post">
                     <header>
-                        <h3><a href="single.html"><?php echo $article->title; ?></a></h3>
+                        <h3><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h3>
                         <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                         <a href="#" class="author"><img src="/public/images/avatar.jpg" alt="" /></a>
                     </header>
-                    <a href="single.html" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
+                    <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
                 </article>
             <?php endforeach; ?>
         </div>
@@ -97,10 +98,10 @@ $this->title = 'My Yii Application';
                 <li>
                     <article>
                         <header>
-                            <h3><a href="single.html"><?php echo $article->title; ?></a></h3>
+                            <h3><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h3>
                             <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                         </header>
-                        <a href="single.html" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
+                        <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
                     </article>
                 </li>
             <?php endforeach; ?>
