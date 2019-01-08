@@ -138,13 +138,13 @@ class Article extends \yii\db\ActiveRecord
         return Yii::$app->formatter->asDate($this->date);
     }
 
-    public static function getAll()
+    public static function getAll($pageSize = 5)
     {
         $query = Article::find();
 
         $count = $query->count();
 
-        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 5]);
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
 
         $articles = $query->offset($pagination->offset)
             ->limit($pagination->limit)
