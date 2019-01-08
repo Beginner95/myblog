@@ -69,7 +69,7 @@ $this->title = 'My Yii Application';
         <a href="/" class="logo"><img src="/public/images/logo.jpg" alt="" /></a>
         <header>
             <h2>Web Vaha</h2>
-            <p>FREE PROGRAMMAN BLOG</p>
+            <p>Programmer's blog</p>
         </header>
     </section>
 
