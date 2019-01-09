@@ -6,7 +6,7 @@ use yii\helpers\Url;
 
     <!-- Intro -->
     <section id="intro">
-        <a href="/" class="logo"><img src="/public/images/logo.jpg" alt="" /></a>
+        <a href="/" class="logo"><img src="/public/images/logo.png" alt="" /></a>
         <header>
             <h2>Web Vaha</h2>
             <p>Programmer's blog</p>
