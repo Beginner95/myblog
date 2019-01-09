@@ -5,7 +5,6 @@ namespace app\controllers;
 use app\models\Article;
 use app\models\Category;
 use Yii;
-use yii\data\Pagination;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
