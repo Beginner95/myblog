@@ -17,6 +17,9 @@
         <footer>
             <ul class="stats">
                 <li><a href="#" class="icon fa-eye"><?php echo (int)$article->viewed; ?></a></li>
+                <?php foreach ($tags as $tag) : ?>
+                    <li><a href="#">#<?php echo $tag; ?></a></li>
+                <?php endforeach; ?>
             </ul>
         </footer>
     </article>
