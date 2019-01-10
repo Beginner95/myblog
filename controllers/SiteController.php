@@ -6,6 +6,7 @@ use app\models\Article;
 use app\models\Category;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -86,11 +87,13 @@ class SiteController extends Controller
     public function actionView($id)
     {
         $article = Article::findOne($id);
+        $tags = ArrayHelper::map($article->tags,'id', 'title');
         $popular = Article::getPopular();
         $recent = Article::getRecent();
         $categories = Category::getAll();
         return $this->render('single', [
             'article' => $article,
+            'tags' => $tags,
             'popular' => $popular,
             'recent' => $recent,
             'categories' => $categories
