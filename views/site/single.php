@@ -2,9 +2,7 @@
     <article class="post">
         <header>
             <div class="title">
-                <h2><a href="#"><?php use yii\helpers\Url;
-
-                        echo $article->title; ?></a></h2>
+                <h2><a href="#"><?php echo $article->title; ?></a></h2>
                 <p><?php echo $article->description; ?></p>
             </div>
             <div class="meta">
@@ -17,11 +15,19 @@
         <footer>
             <ul class="stats">
                 <li><a href="#" class="icon fa-eye"><?php echo (int)$article->viewed; ?></a></li>
-                <?php foreach ($tags as $tag) : ?>
-                    <li><a href="#">#<?php echo $tag; ?></a></li>
-                <?php endforeach; ?>
             </ul>
         </footer>
+        <?php if (!empty($tags)) : ?>
+            <div class="tags">
+                <?php
+                    $array_tags = [];
+                    foreach ($tags as $key => $tag) {
+                        $array_tags[] = '<a href="' . $key . '">' . $tag . '</a>';
+                    }
+                ?>
+                Теги: <?php echo implode(', ', $array_tags); ?>
+            </div>
+        <?php endif; ?>
     </article>
 </div>
 <?php
