@@ -2850,6 +2850,11 @@ input, select, textarea {
 				padding: 0;
 			}
 
+			.post .tags {
+				margin-top: -25px;
+				font-size: 13px;
+			}
+
 				.post > footer .stats li {
 					border-left: solid 1px rgba(160, 160, 160, 0.3);
 					display: inline-block;
