@@ -126,4 +126,10 @@ class User extends \yii\db\ActiveRecord
     {
         // TODO: Implement validateAuthKey() method.
     }
+
+    public static function findByUsername($username)
+    {
+        return User::find()->where(['name' => $username])->one();
+    }
+
 }
