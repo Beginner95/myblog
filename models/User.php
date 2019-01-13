@@ -132,4 +132,10 @@ class User extends \yii\db\ActiveRecord
         return User::find()->where(['name' => $username])->one();
     }
 
+
+    public function validatePassword($password)
+    {
+        return ($this->password == $password) ? true : false;
+    }
+
 }
