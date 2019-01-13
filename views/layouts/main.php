@@ -7,6 +7,7 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
+use yii\helpers\Url;
 use yii\widgets\Breadcrumbs;
 use app\assets\PublicAsset;
 
@@ -101,8 +102,19 @@ PublicAsset::register($this);
         <!-- Actions -->
         <section>
             <ul class="actions stacked">
-                <li><a href="/site/login" class="button large fit">Log In</a></li>
-                <li><a href="/site/signup" class="button large fit">Register</a></li>
+                <?php if(Yii::$app->user->isGuest) : ?>
+                    <li><a href="<?php echo Url::toRoute(['auth/login']); ?>" class="button large fit">Log In</a></li>
+                    <li><a href="<?php echo Url::toRoute(['auth/signup']); ?>" class="button large fit">Register</a></li>
+                <?php else: ?>
+                    <?php
+                        echo Html::beginForm(['/auth/logout'], 'post')
+                        . Html::submitButton(
+                                'Logout (' . Yii::$app->user->identity->name . ')',
+                                ['class' => 'btn btn-link logout']
+                        )
+                        . Html::endForm();
+                    ?>
+                <?php endif; ?>
             </ul>
         </section>
 
