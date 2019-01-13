@@ -94,7 +94,7 @@ class User extends \yii\db\ActiveRecord
      */
     public function getId()
     {
-        // TODO: Implement getId() method.
+        return $this->id;
     }
 
     /**
