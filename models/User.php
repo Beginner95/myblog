@@ -138,4 +138,9 @@ class User extends \yii\db\ActiveRecord
         return ($this->password == $password) ? true : false;
     }
 
+    public function create()
+    {
+        return $this->save(false);
+    }
+
 }
