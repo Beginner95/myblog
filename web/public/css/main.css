@@ -3387,6 +3387,9 @@ input, select, textarea {
 		width: 100%;
 	}
 
+.site-login, .site-register {
+	margin: 0 auto;
+}
 /* Sidebar */
 
 	#sidebar {
