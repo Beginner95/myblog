@@ -10,6 +10,18 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<div>
+    <script type="text/javascript" src="https://vk.com/js/api/openapi.js?160"></script>
+    <script type="text/javascript">
+        VK.init({apiId: 6819835});
+    </script>
+
+    <!-- VK Widget -->
+    <div id="vk_auth"></div>
+    <script type="text/javascript">
+        VK.Widgets.Auth("vk_auth", {"authUrl":"/auth/login-vk"});
+    </script>
+</div>
 <div class="site-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
