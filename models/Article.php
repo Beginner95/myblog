@@ -166,4 +166,10 @@ class Article extends \yii\db\ActiveRecord
         return Article::find()->orderBy('date asc')->limit(5)->all();
     }
 
+    public function saveArticle()
+    {
+        $this->user_id = Yii::$app->user->id;
+        $this->save();
+    }
+
 }
