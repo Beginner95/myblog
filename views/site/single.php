@@ -29,6 +29,15 @@
             </div>
         <?php endif; ?>
     </article>
+    <div class="comments">
+
+        <article class="post">
+            <h1>Comments</h1>
+            <form action="">
+                <textarea rows="4" name="comment"></textarea>
+            </form>
+        </article>
+    </div>
 </div>
 <?php
 
