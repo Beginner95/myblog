@@ -158,4 +158,9 @@ class User extends \yii\db\ActiveRecord
         return Yii::$app->user->login($this);
     }
 
+    public function getImage()
+    {
+        return $this->photo;
+    }
+
 }
