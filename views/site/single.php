@@ -30,12 +30,11 @@
         <?php endif; ?>
     </article>
     <div class="comments">
-
         <article class="post">
-            <h1>Comments</h1>
-            <form action="">
-                <textarea rows="4" name="comment"></textarea>
-            </form>
+            <h1>Leave your comment</h1>
+            <textarea rows="4" name="comment"></textarea>
+            <button class="button large ">Preview</button>
+            <button class="button large ">Add my comment</button>
         </article>
     </div>
 </div>
