@@ -68,4 +68,13 @@ class Comment extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
     }
+
+    /**
+     * @return string
+     * @throws \yii\base\InvalidConfigException
+     */
+    public function getDate()
+    {
+        return Yii::$app->formatter->asDate($this->date);
+    }
 }
