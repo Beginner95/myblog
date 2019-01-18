@@ -3390,6 +3390,11 @@ input, select, textarea {
 .site-login, .site-register {
 	margin: 0 auto;
 }
+
+.comments textarea{
+	resize: vertical;
+	margin: 10px 0;
+}
 /* Sidebar */
 
 	#sidebar {
