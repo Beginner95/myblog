@@ -3391,10 +3391,15 @@ input, select, textarea {
 	margin: 0 auto;
 }
 
-.comments textarea{
+.comments .post textarea{
 	resize: vertical;
-	margin: 10px 0;
+	margin: 30px 0 10px 0;
 }
+
+.comments .post .comment .author .name {
+	margin: 0 0 0 1.5em;
+}
+
 /* Sidebar */
 
 	#sidebar {
