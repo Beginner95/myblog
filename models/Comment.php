@@ -82,4 +82,9 @@ class Comment extends \yii\db\ActiveRecord
     {
         return $this->status;
     }
+
+    public static function getAll()
+    {
+        return Comment::find()->orderBy('id desc')->all();
+    }
 }
