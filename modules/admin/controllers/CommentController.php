@@ -16,4 +16,12 @@ class CommentController extends Controller
         ]);
     }
 
+    public function actionDelete($id)
+    {
+        $comment = Comment::findOne($id);
+        if ($comment->delete()) {
+            return $this->redirect(['index']);
+        }
+    }
+
 }
