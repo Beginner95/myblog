@@ -87,4 +87,11 @@ class Comment extends \yii\db\ActiveRecord
     {
         return Comment::find()->orderBy('id desc')->all();
     }
+
+    public function allow()
+    {
+        $this->status = 1;
+        return $this->save(false);
+    }
+
 }
