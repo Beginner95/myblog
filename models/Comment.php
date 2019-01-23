@@ -94,4 +94,10 @@ class Comment extends \yii\db\ActiveRecord
         return $this->save(false);
     }
 
+    public function disallow()
+    {
+        $this->status = 0;
+        return $this->save(false);
+    }
+
 }
