@@ -24,4 +24,12 @@ class CommentController extends Controller
         }
     }
 
+    public function actionDisallow($id)
+    {
+        $comment = Comment::findOne($id);
+        if ($comment->allow()) {
+            return $this->redirect(['index']);
+        }
+    }
+
 }
