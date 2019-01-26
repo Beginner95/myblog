@@ -3400,6 +3400,21 @@ input, select, textarea {
 	margin: 0 0 0 1.5em;
 }
 
+.comments .post .comment .author {
+	float: left;
+	margin-right: 15px;
+}
+.comments .post .comment .published{
+	display: block;
+	float: none;
+}
+
+.comment-text {
+	display: block;
+	float: none;
+	clear: both;
+	margin-top: 30px;
+}
 /* Sidebar */
 
 	#sidebar {
