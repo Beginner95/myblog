@@ -8,7 +8,9 @@
                         <span class="name"><?php echo $comment->user['name']; ?></span>
                     </a>
                     <time class="published" datetime="<?php echo $comment->date; ?>"><?php echo $comment->getDate(); ?></time>
+                <div class="comment-text">
                     <?php echo $comment->text; ?>
+                </div>
                 </div>
             <?php endforeach; ?>
         </article>
