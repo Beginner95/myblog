@@ -3396,6 +3396,13 @@ input, select, textarea {
 	margin: 30px 0 10px 0;
 }
 
+.comments .comment{
+	border: 1px solid #eee;
+	padding: 10px;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+
 .comments .post .comment .author .name {
 	margin: 0 0 0 1.5em;
 }
@@ -3415,6 +3422,8 @@ input, select, textarea {
 	clear: both;
 	margin-top: 30px;
 }
+
+
 /* Sidebar */
 
 	#sidebar {
