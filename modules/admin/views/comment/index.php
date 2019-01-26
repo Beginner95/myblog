@@ -34,7 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
                         <td><?php echo $comment->user->name; ?></td>
                         <td><?php echo $comment->text; ?></td>
                         <td>
-                            <?php var_dump($comment->isAllowed()); ?>
                             <?php if ($comment->isAllowed()) : ?>
                                 <a href="<?php echo Url::toRoute(['comment/disallow', 'id' => $comment->id]); ?>" class="btn btn-warning">Disallow</span></a>
                             <?php else: ?>
