@@ -4,8 +4,8 @@
             <?php foreach($comments as $comment) : ?>
                 <div class="comment">
                     <a href="#" class="author">
-                        <img src="<?php echo $comment->user['image']; ?>" alt="" />
-                        <span class="name"><?php echo $comment->user['name']; ?></span>
+                        <img src="<?php echo $comment->user->getImage(); ?>" alt="" />
+                        <span class="name"><?php echo $comment->user->name; ?></span>
                     </a>
                     <time class="published" datetime="<?php echo $comment->date; ?>"><?php echo $comment->getDate(); ?></time>
                 <div class="comment-text">
