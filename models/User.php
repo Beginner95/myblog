@@ -160,7 +160,8 @@ class User extends \yii\db\ActiveRecord
 
     public function getImage()
     {
-        return $this->photo;
+
+        return !empty($this->photo) ? $this->photo : '/no-image-user.png';
     }
 
 }
