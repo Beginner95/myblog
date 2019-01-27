@@ -3414,6 +3414,8 @@ input, select, textarea {
 .comments .post .comment .published{
 	display: block;
 	float: none;
+	font-size: 15px;
+	padding-top: 8px;
 }
 
 .comment-text {
