@@ -1,8 +1,10 @@
 <?php
 
 use mihaildev\ckeditor\CKEditor;
+use mihaildev\elfinder\ElFinder;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+mihaildev\elfinder\Assets::noConflict($this);
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Article */
@@ -19,10 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?php
         echo $form->field($model, 'content')->widget(CKEditor::className(),[
-            'editorOptions' => [
-                'preset' => 'full',
-                'inline' => false,
-            ],
+            'editorOptions' => ElFinder::ckeditorOptions('elfinder',[]),
         ]);
     ?>
 
