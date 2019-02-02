@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Article;
 use app\models\Category;
 use app\models\CommentForm;
+use app\models\Tag;
 use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
@@ -120,6 +121,24 @@ class SiteController extends Controller
         return $this->render('category', [
             'articles' => $data['articles'],
             'pagination' => $data['pagination'],
+            'popular' => $popular,
+            'recent' => $recent,
+            'categories' => $categories
+        ]);
+    }
+
+    /**
+     * @param $id
+     * @return string
+     */
+    public function actionTag($id)
+    {
+        $data = Tag::getArticlesByTag($id);
+        $popular = Article::getPopular();
+        $recent = Article::getRecent();
+        $categories = Category::getAll();
+        return $this->render('tag', [
+            'articles' => $data->articles,
             'popular' => $popular,
             'recent' => $recent,
             'categories' => $categories
