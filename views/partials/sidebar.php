@@ -22,7 +22,7 @@ use yii\helpers\Url;
                     <header>
                         <h3><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h3>
                         <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
-                        <a href="#" class="author"><img src="/public/images/avatar.jpg" alt="" /></a>
+                        <a href="#" class="author"><img src="<?php echo $article->author->getImage(); ?>" alt="<?php echo $article->author->name; ?>" /></a>
                     </header>
                     <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
                 </article>
