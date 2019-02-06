@@ -1,3 +1,4 @@
+<?php use yii\helpers\Url; ?>
 <div id="main">
     <article class="post">
         <header>
@@ -22,7 +23,7 @@
                 <?php
                     $array_tags = [];
                     foreach ($tags as $key => $tag) {
-                        $array_tags[] = '<a href="' . $key . '">' . $tag . '</a>';
+                        $array_tags[] = '<a href="' . Url::toRoute(['site/tag', 'id' => $key]) . '">' . $tag . '</a>';
                     }
                 ?>
                 Теги: <?php echo implode(', ', $array_tags); ?>
