@@ -17,7 +17,7 @@ $this->title = 'My Yii Application';
                     </div>
                     <div class="meta">
                         <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
-                        <a href="#" class="author"><span class="name">Jane Doe</span><img src="/public/images/avatar.jpg" alt="" /></a>
+                        <a href="#" class="author"><span class="name"><?php echo $article->author->name; ?></span><img src="<?php echo $article->author->getImage(); ?>" alt="<?php echo $article->author->name; ?>" /></a>
                     </div>
                 </header>
                 <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
