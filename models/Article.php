@@ -163,7 +163,7 @@ class Article extends \yii\db\ActiveRecord
 
     public static function getRecent()
     {
-        return Article::find()->orderBy('date asc')->limit(5)->all();
+        return Article::find()->orderBy('date desc')->limit(5)->all();
     }
 
     public function saveArticle()
