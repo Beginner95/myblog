@@ -65,7 +65,7 @@ use yii\helpers\Url;
         <h2>About</h2>
         <p>My name is Vaharsolta Nesirhaev; I'am a lifelong programmer web developer.</p>
         <ul class="actions">
-            <li><a href="#" class="button">Learn More</a></li>
+            <li><a href="<?php echo Url::toRoute(['site/about']); ?>" class="button">Learn More</a></li>
         </ul>
     </section>
 
