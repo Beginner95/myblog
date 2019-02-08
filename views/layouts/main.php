@@ -34,14 +34,12 @@ PublicAsset::register($this);
 
     <!-- Header -->
     <header id="header">
-        <h1><a href="/">Web Vaha</a></h1>
+        <h1><a href="/">Blog Web Vaha</a></h1>
         <nav class="links">
             <ul>
-                <li><a href="#">Lorem</a></li>
-                <li><a href="#">Ipsum</a></li>
-                <li><a href="#">Feugiat</a></li>
-                <li><a href="#">Tempus</a></li>
-                <li><a href="#">Adipiscing</a></li>
+                <li><a href="https://webvaha.ru">WebVaha</a></li>
+                <li><a href="https://shop.webvaha.ru">Shop</a></li>
+                <li><a href="<?php echo Url::toRoute(['site/about']); ?>">About</a></li>
             </ul>
         </nav>
         <nav class="main">
@@ -70,34 +68,34 @@ PublicAsset::register($this);
         </section>
 
         <!-- Links -->
-        <section>
-            <ul class="links">
-                <li>
-                    <a href="#">
-                        <h3>Lorem ipsum</h3>
-                        <p>Feugiat tempus veroeros dolor</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h3>Dolor sit amet</h3>
-                        <p>Sed vitae justo condimentum</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h3>Feugiat veroeros</h3>
-                        <p>Phasellus sed ultricies mi congue</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <h3>Etiam sed consequat</h3>
-                        <p>Porta lectus amet ultricies</p>
-                    </a>
-                </li>
-            </ul>
-        </section>
+<!--        <section>-->
+<!--            <ul class="links">-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--                        <h3>Lorem ipsum</h3>-->
+<!--                        <p>Feugiat tempus veroeros dolor</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--                        <h3>Dolor sit amet</h3>-->
+<!--                        <p>Sed vitae justo condimentum</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--                        <h3>Feugiat veroeros</h3>-->
+<!--                        <p>Phasellus sed ultricies mi congue</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a href="#">-->
+<!--                        <h3>Etiam sed consequat</h3>-->
+<!--                        <p>Porta lectus amet ultricies</p>-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </section>-->
 
         <!-- Actions -->
         <section>
