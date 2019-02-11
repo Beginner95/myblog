@@ -15,6 +15,7 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'vNtQ-Uk9QVFOXzMJ1R8rTXLAHku7c2VI',
+            'baseUrl' => '',
         ],
 
         'user' => [
@@ -32,6 +33,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                '' => 'site/index',
+                '<action>'=>'site/<action>',
             ],
         ],
         
