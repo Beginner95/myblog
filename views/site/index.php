@@ -5,7 +5,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 
-$this->title = 'My Yii Application';
+$this->title = Yii::$app->name;
 ?>
 <div id="main">
     <?php foreach ($articles as $article) : ?>
