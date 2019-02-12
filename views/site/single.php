@@ -1,4 +1,7 @@
-<?php use yii\helpers\Url; ?>
+<?php
+    use yii\helpers\Url;
+    $this->title = $article->title;
+?>
 <div id="main">
     <article class="post">
         <header>
