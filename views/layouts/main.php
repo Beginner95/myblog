@@ -46,7 +46,7 @@ PublicAsset::register($this);
             <ul>
                 <li class="search">
                     <a class="fa-search" href="#search">Search</a>
-                    <form id="search" method="get" action="#">
+                    <form action="<?php echo \yii\helpers\Url::to(['search/search']); ?>" id="search" method="get">
                         <input type="text" name="query" placeholder="Search" />
                     </form>
                 </li>
@@ -62,7 +62,7 @@ PublicAsset::register($this);
 
         <!-- Search -->
         <section>
-            <form class="search" method="get" action="#">
+            <<form action="<?php echo \yii\helpers\Url::to(['search/search']); ?>" id="search" method="get">
                 <input type="text" name="query" placeholder="Search" />
             </form>
         </section>
