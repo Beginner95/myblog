@@ -192,4 +192,22 @@ class Article extends \yii\db\ActiveRecord
         $this->viewed += 1;
         return $this->save(false);
     }
+
+    public static function search($q, $pageSize = 5)
+    {
+        $query = Article::find()->where(['like', 'content', $q])->orWhere(['like', 'title', $q]);
+
+        $count = $query->count();
+
+        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => $pageSize]);
+
+        $articles = $query->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        $data['articles'] = $articles;
+        $data['pagination'] = $pagination;
+
+        return $data;
+    }
 }
