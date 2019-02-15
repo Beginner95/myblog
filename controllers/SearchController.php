@@ -16,7 +16,7 @@ class SearchController extends Controller
             return $this->render('search', ['query' => $query]);
         }
 
-        $data = Article::search($query);
+        $data = Article::searchSite($query);
         $popular = Article::getPopular();
         $recent = Article::getRecent();
         $categories = Category::getAll();

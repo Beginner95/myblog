@@ -193,7 +193,7 @@ class Article extends \yii\db\ActiveRecord
         return $this->save(false);
     }
 
-    public static function search($q, $pageSize = 5)
+    public static function searchSite($q, $pageSize = 5)
     {
         $query = Article::find()->where(['like', 'content', $q])->orWhere(['like', 'title', $q]);
 
