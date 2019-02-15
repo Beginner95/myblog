@@ -62,7 +62,7 @@ PublicAsset::register($this);
 
         <!-- Search -->
         <section>
-            <<form action="<?php echo \yii\helpers\Url::to(['search/search']); ?>" id="search" method="get">
+            <form action="<?php echo \yii\helpers\Url::to(['search/search']); ?>" id="search" method="get">
                 <input type="text" name="query" placeholder="Search" />
             </form>
         </section>
