@@ -10,6 +10,7 @@ class SignupForm extends Model
     public $name;
     public $email;
     public $password;
+    public $verifyCode;
 
     public function rules()
     {
@@ -17,7 +18,15 @@ class SignupForm extends Model
             [['name', 'email', 'password'], 'required'],
             [['name'], 'string'],
             [['email'], 'email'],
-            [['email'], 'unique', 'targetClass' => 'app\models\User', 'targetAttribute' => 'email']
+            [['email'], 'unique', 'targetClass' => 'app\models\User', 'targetAttribute' => 'email'],
+            ['verifyCode', 'captcha']
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'verifyCode' => 'Verification Code',
         ];
     }
 
