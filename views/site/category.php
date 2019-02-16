@@ -21,7 +21,7 @@ $this->title = 'My Yii Application';
                 </div>
             </header>
             <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
-            <p><?php echo $article->content; ?></p>
+            <p><?php echo $article->getSomeArticle($article->content); ?>... </p>
             <footer>
                 <ul class="actions">
                     <li><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="button large">Continue Reading</a></li>
