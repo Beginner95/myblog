@@ -210,4 +210,13 @@ class Article extends \yii\db\ActiveRecord
 
         return $data;
     }
+
+    public function getSomeArticle($article)
+    {
+        $somearticle = strip_tags($article);
+        $somearticle = substr($somearticle, 0, 400);
+        $somearticle = trim($somearticle, '!,.-');
+        $somearticle = substr($somearticle, 0, strrpos($somearticle, ' '));
+        return $somearticle;
+    }
 }
