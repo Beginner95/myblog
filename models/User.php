@@ -129,7 +129,7 @@ class User extends \yii\db\ActiveRecord
 
     public static function findByUsername($username)
     {
-        return User::find()->where(['name' => $username])->one();
+        return User::find()->where(['name' => $username])->orWhere(['email' => $username])->one();
     }
 
 
