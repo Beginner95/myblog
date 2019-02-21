@@ -22,7 +22,7 @@ use yii\widgets\LinkPager;
                 </div>
             </header>
             <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
-            <p><?php echo $article->content; ?></p>
+            <p><?php echo $article->getSomeArticle($article->content); ?>...</p>
             <footer>
                 <ul class="actions">
                     <li><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="button large">Continue Reading</a></li>
@@ -36,28 +36,11 @@ use yii\widgets\LinkPager;
     <?php
     echo LinkPager::widget([
         'pagination' => $pagination,
-        //Css option for container
         'options' => ['class' => 'actions pagination'],
-        //First option value
-        //    'firstPageLabel' => 'first',
-        //Last option value
-        //    'lastPageLabel' => 'last',
-        //Previous option value
         'prevPageLabel' => 'PREVIOUS PAGE',
-        //Next option value
         'nextPageLabel' => 'Next Page',
-        //Current Active option value
         'activePageCssClass' => 'active',
-        //Max count of allowed options
-        //    'maxButtonCount' => 8,
-        // Css for each options. Links
         'linkOptions' => ['class' => 'button '],
-        //    'disabledPageCssClass' => '',
-        // Customzing CSS class for navigating link
-        //    'prevPageCssClass' => '',
-        //    'nextPageCssClass' => '',
-        //    'firstPageCssClass' => 'p-first',
-        //    'lastPageCssClass' => 'p-last',
     ]);
     ?>
 <?php else: ?>
