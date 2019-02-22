@@ -1,6 +1,7 @@
 <?php
     use yii\helpers\Url;
     $this->title = $article->title;
+    nezhelskoy\highlight\HighlightAsset::register($this);
 ?>
 <div id="main">
     <article class="post">
