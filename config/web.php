@@ -39,6 +39,14 @@ $config = [
                 'category/<id:\d+>' => 'site/category'
             ],
         ],
+        'assetManager' => [
+            'bundles' => [
+                'nezhelskoy\highlight\HighlightAsset' => [
+                    'selector' => 'pre',
+                    'css' => ['dist/styles/darcula.css'],
+                ],
+            ]
+        ],
         
     ],
 
