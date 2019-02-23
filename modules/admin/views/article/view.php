@@ -47,7 +47,12 @@ nezhelskoy\highlight\HighlightAsset::register($this);
             'viewed',
             'user_id',
             'status',
-            'category_id',
+            [
+                'label' => 'Category',
+                'value' => function ($data) {
+                    return $data->category->title;
+                }
+            ]
         ],
     ]) ?>
 
