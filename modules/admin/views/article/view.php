@@ -46,7 +46,13 @@ nezhelskoy\highlight\HighlightAsset::register($this);
             ],
             'viewed',
             'user_id',
-            'status',
+            [
+                'format' => 'html',
+                'label' => 'Status',
+                'value' => function ($data) {
+                    return empty($data->status) ? '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>';
+                }
+            ],
             [
                 'label' => 'Category',
                 'value' => function ($data) {
