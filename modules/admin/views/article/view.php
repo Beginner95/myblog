@@ -45,7 +45,12 @@ nezhelskoy\highlight\HighlightAsset::register($this);
                 }
             ],
             'viewed',
-            'user_id',
+            [
+                'label' => 'User',
+                'value' => function ($data) {
+                    return $data->author->name;
+                }
+            ],
             [
                 'format' => 'html',
                 'label' => 'Status',
