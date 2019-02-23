@@ -52,6 +52,7 @@ use yii\helpers\Url;
     <section>
         <ul class="categories">
             <?php foreach ($categories as $category) : ?>
+                <?php if (empty($category->getArticlesCount())) continue; ?>
                 <li>
                     <a href="<?php echo Url::toRoute(['site/category', 'id' => $category->id]); ?>"><?php echo $category->title; ?></a>
                     <span>(<?php echo $category->getArticlesCount(); ?>)</span>
