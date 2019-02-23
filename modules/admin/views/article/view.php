@@ -9,6 +9,7 @@ use yii\widgets\DetailView;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Articles', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
+nezhelskoy\highlight\HighlightAsset::register($this);
 ?>
 <div class="article-view">
 
@@ -34,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',
             'title',
             'description:ntext',
-            'content:ntext',
+            'content:html',
             'date',
             [
                 'format' => 'html',
