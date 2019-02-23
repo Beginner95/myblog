@@ -10,6 +10,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\ContactForm;
@@ -80,14 +81,18 @@ class SiteController extends Controller
     }
 
     /**
-     * Display single page
-     *
      * @param $id
      * @return string
+     * @throws NotFoundHttpException
      */
     public function actionView($id)
     {
         $article = Article::findOne($id);
+
+        if (empty($article)) {
+            throw new NotFoundHttpException();
+        }
+
         $tags = ArrayHelper::map($article->tags,'id', 'title');
         $popular = Article::getPopular();
         $recent = Article::getRecent();
