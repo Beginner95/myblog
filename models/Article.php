@@ -140,7 +140,7 @@ class Article extends \yii\db\ActiveRecord
 
     public static function getAll($pageSize = 5)
     {
-        $query = Article::find();
+        $query = Article::find()->where(['status'=>null]);
 
         $count = $query->count();
 
@@ -158,12 +158,12 @@ class Article extends \yii\db\ActiveRecord
 
     public static function getPopular()
     {
-        return Article::find()->orderBy('viewed desc')->limit(3)->all();
+        return Article::find()->orderBy('viewed desc')->where(['status' => null])->limit(3)->all();
     }
 
     public static function getRecent()
     {
-        return Article::find()->orderBy('date desc')->limit(5)->all();
+        return Article::find()->orderBy('date desc')->where(['status' => null])->limit(5)->all();
     }
 
     public function saveArticle()
