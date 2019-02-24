@@ -24,11 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'title',
             'description:ntext',
-            'content:html',
             'date',
             [
                 'format' => 'html',
@@ -37,12 +34,29 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::img($data->getImage(), ['width'=> 100]);
                 }
             ],
-            //'viewed',
-            //'user_id',
-            //'status',
-            //'category_id',
+            'viewed',
+            [
+                'label' => 'Category',
+                'value' => function ($data) {
+                    return ($data->category->title) ? $data->category->title : 'No category';
+                }
+            ],
+            [
+                'format' => 'html',
+                'label' => 'Status',
+                'value' => function ($data) {
+                    return empty($data->status) ? '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>';
+                }
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'header'=>'Действия',
+                'headerOptions' => [
+                    'width' => '60',
+                ],
+                'template' => '{view} {update} {delete}{link}',
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
 </div>
