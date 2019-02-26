@@ -25,6 +25,22 @@ mihaildev\elfinder\Assets::noConflict($this);
         ]);
     ?>
 
+    <?php
+
+        if ($model->isAllowed()) {
+            $status = [
+                '' => 'Allow',
+                1 => 'Disallow'
+            ];
+        } else {
+            $status = [
+                1 => 'Disallow',
+                '' => 'Allow'
+            ];
+        }
+        echo $form->field($model, 'status')->dropDownList($status);
+    ?>
+
     <?= $form->field($model, 'date')->textInput() ?>
 
     <div class="form-group">
