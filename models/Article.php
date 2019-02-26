@@ -219,4 +219,9 @@ class Article extends \yii\db\ActiveRecord
         $somearticle = substr($somearticle, 0, strrpos($somearticle, ' '));
         return $somearticle;
     }
+
+    public function isAllowed()
+    {
+        return $this->status;
+    }
 }
