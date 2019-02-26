@@ -40,6 +40,7 @@ class Article extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['status'], 'integer'],
             [['title'], 'required'],
             [['title', 'description', 'content'], 'string'],
             [['date'], 'date', 'format' => 'php:Y-m-d'],
