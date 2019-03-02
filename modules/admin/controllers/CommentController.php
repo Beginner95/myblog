@@ -4,15 +4,19 @@ namespace app\modules\admin\controllers;
 
 
 use app\models\Comment;
+use app\models\CommentSearch;
+use Yii;
 use yii\web\Controller;
 
 class CommentController extends Controller
 {
     public function actionIndex()
     {
-        $comments = Comment::getAll();
+        $searchModel = new CommentSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
         return $this->render('index', [
-            'comments' => $comments
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
         ]);
     }
 
