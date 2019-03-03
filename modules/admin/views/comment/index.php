@@ -3,7 +3,9 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\Url;
-
+use yii\helpers\ArrayHelper;
+use app\models\Article;
+use app\models\User;
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -14,41 +16,41 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="category-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+            'text:ntext',
+            'date',
+            [
+                'attribute' => 'user_id',
+                'label' => 'User',
+                'value' => function ($data) {
+                    return $data->user->name;
+                },
+                'filter' => Html::activeDropDownList($searchModel, 'user_id', ArrayHelper::map(User::find()->all(), 'id', 'name'), ['prompt' => '', 'class' => 'form-control form-control-sm']),
+            ],
+            [
+                'attribute' => 'article_id',
+                'label' => 'Article',
+                'value' => function ($data) {
+                    return $data->article->title;
+                },
+                'filter' => Html::activeDropDownList($searchModel, 'article_id', ArrayHelper::map(Article::find()->all(), 'id', 'title'), ['prompt' => '', 'class' => 'form-control form-control-sm']),
+            ],
 
-    <?php if (!empty($comments)) : ?>
-    
-        <table class="table">
-            <thead>
-                <tr>
-                    <td>#</td>
-                    <td>Article</td>
-                    <td>Author</td>
-                    <td>Text</td>
-                    <td>Action</td>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($comments as $comment) : ?>
-                    <tr>
-                        <td><?php echo $comment->id; ?></td>
-                        <td><?php echo $comment->article->title; ?></td>
-                        <td><?php echo $comment->user->name; ?></td>
-                        <td><?php echo $comment->text; ?></td>
-                        <td>
-                            <?php if ($comment->isAllowed()) : ?>
-                                <a href="<?php echo Url::toRoute(['comment/disallow', 'id' => $comment->id]); ?>" class="btn btn-warning">Disallow</span></a>
-                            <?php else: ?>
-                                <a href="<?php echo Url::toRoute(['comment/allow', 'id' => $comment->id]); ?>" class="btn btn-success">Allow</a>
-                            <?php endif; ?>
-                            <a href="<?php echo Url::toRoute(['comment/delete', 'id' => $comment->id]); ?>" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <h4>Комментариев нет!</h4>
-    <?php endif; ?>
-    
+            [
+                'format' => 'html',
+                'label' => 'Action',
+                'value' => function ($data) {
+                    return ($data->isAllowed()) ? '<a href="' . Url::toRoute(['comment/disallow', 'id' => $data->id]) . '" class="btn btn-warning">Disallow</span></a>' : '<a href="' . Url::toRoute(['comment/allow', 'id' => $data->id]) . '" class="btn btn-success">Allow</a>';
+                }
+            ],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{delete}{link}',
+            ],
+        ],
+    ]); ?>
 </div>
