@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'label' => 'Category',
                 'value' => function ($data) {
-                    return ($data->category->title) ? $data->category->title : 'No category';
+                    return (!empty($data->category->title)) ? $data->category->title : 'No category';
                 }
             ],
             [

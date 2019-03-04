@@ -61,7 +61,7 @@ nezhelskoy\highlight\HighlightAsset::register($this);
             [
                 'label' => 'Category',
                 'value' => function ($data) {
-                    return $data->category->title;
+                    return (!empty($data->category->title)) ? $data->category->title : 'No category';
                 }
             ]
         ],
