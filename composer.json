@@ -21,7 +21,8 @@
         "mihaildev/yii2-ckeditor": "*",
         "mihaildev/yii2-elfinder": "*",
         "dmstr/yii2-adminlte-asset": "^2.1",
-        "nezhelskoy/yii2-highlight": "*"
+        "nezhelskoy/yii2-highlight": "*",
+        "kartik-v/yii2-widget-datepicker": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
