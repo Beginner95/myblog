@@ -1,5 +1,6 @@
 <?php
 
+use kartik\date\DatePicker;
 use mihaildev\ckeditor\CKEditor;
 use mihaildev\elfinder\ElFinder;
 use yii\helpers\Html;
@@ -40,9 +41,17 @@ mihaildev\elfinder\Assets::noConflict($this);
         }
         echo $form->field($model, 'status')->dropDownList($status);
     ?>
-
-    <?= $form->field($model, 'date')->textInput() ?>
-
+    <?php
+        echo DatePicker::widget([
+            'name' => 'Article[date]',
+            'type' => DatePicker::TYPE_COMPONENT_APPEND,
+            'value' => $model->date,
+            'pluginOptions' => [
+                'autoclose'=>true,
+                'format' => 'yyyy-mm-dd'
+            ]
+        ]);
+    ?>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
