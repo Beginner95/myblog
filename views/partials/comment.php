@@ -27,6 +27,9 @@
                     <?php echo Yii::$app->session->getFlash('comment'); ?>
                 </div>
             <?php endif; ?>
+            <span><b>B</b></span>
+            <span><i>I</i></span>
+            <span><u>U</u></span>
             <?php
             echo $form->field($commentForm, 'comment')
                 ->textarea(['class'=>'form-control', 'placeholder'=>'Write Massage'])
