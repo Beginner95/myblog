@@ -27,9 +27,12 @@
                     <?php echo Yii::$app->session->getFlash('comment'); ?>
                 </div>
             <?php endif; ?>
-            <span><b>B</b></span>
-            <span><i>I</i></span>
-            <span><u>U</u></span>
+            <div class="blocks_btn">
+                <span class="btn" id="btn_bold"><b>B</b></span>
+                <span class="btn" id="btn_italic"><i>I</i></span>
+                <span class="btn" id="btn_underline"><u>U</u></span>
+                <span class="btn" id="btn_strike"><s>S</s></span>
+            </div>
             <?php
             echo $form->field($commentForm, 'comment')
                 ->textarea(['class'=>'form-control', 'placeholder'=>'Write Massage'])
