@@ -92,9 +92,19 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		$intro.prependTo($sidebar);
 	});
 
-	$('#btn_bold');
-	$('#btn_italic');
-	$('#btn_underline');
-	$('#btn_strike');
+    $('#btn_bold, #btn_italic, #btn_underline, #btn_strike').bind('click', function(){
+        var code = '[' + $(this)[0].innerText + '][/' + $(this)[0].innerText + ']',
+            txt = $('#commentform-comment'),
+            p = txt[0].selectionStart,
+            text = txt.val();
+
+        if(p !== undefined) {
+            txt.val(text.slice(0, p) + code + text.slice(p));
+        } else {
+            txt.trigger('focus');
+            range = document.selection.createRange();
+            range.text = code;
+        }
+    });
 
 })(jQuery);
