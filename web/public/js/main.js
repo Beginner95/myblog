@@ -108,3 +108,21 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
     });
 
 })(jQuery);
+
+function insertTag(textAreaName, tagStart, tagEnd){
+    var area= document.getElementsByName(textAreaName).item(0);
+
+    if (document.getSelection) {
+        area.value = area.value.substring(0, area.selectionStart)+
+            tagStart+
+            area.value.substring(area.selectionStart, area.selectionEnd)+
+            tagEnd;
+        area.value.substring(area.selectionEnd, area.value.length);
+    } else  {
+        var selectedText = document.selection.createRange().text;
+        if (selectedText !== '') {
+            var newText = tagStart + selectedText + tagEnd;
+            document.selection.createRange().text = newText;
+        }
+    }
+}
