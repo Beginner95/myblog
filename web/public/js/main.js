@@ -109,7 +109,7 @@ function insertTag(textAreaName, tagStart, tagEnd){
         area.value = area.value.substring(0, area.selectionStart)+
             tagStart+
             area.value.substring(area.selectionStart, area.selectionEnd)+
-            tagEnd;
+            tagEnd+
         area.value.substring(area.selectionEnd, area.value.length);
     } else  {
         var selectedText = document.selection.createRange().text;
