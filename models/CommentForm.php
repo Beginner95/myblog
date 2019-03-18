@@ -20,8 +20,18 @@ class CommentForm extends Model
 
     public function saveComment($article_id)
     {
+        $tags = [
+            '[B]' => '<b>',
+            '[/B]' => '</b>',
+            '[I]' => '<i>',
+            '[/I]' => '</i>',
+            '[U]' => '<u>',
+            '[/U]' => '</u>',
+            '[S]' => '<s>',
+            '[/S]' => '</s>'
+        ];
         $comment = new Comment();
-        $comment->text = $this->comment;
+        $comment->text = strtr($this->comment, $tags);
         $comment->user_id = Yii::$app->user->id;
         $comment->article_id = $article_id;
         $comment->status = 0;
