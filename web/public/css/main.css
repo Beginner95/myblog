@@ -3577,6 +3577,10 @@ input, select, textarea {
 	font-weight: bold;
 }
 
+.blocks_btn .btn:hover {
+	background: #f1f1f1;
+}
+
 /* Menu */
 
 	#menu {
