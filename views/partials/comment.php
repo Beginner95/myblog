@@ -32,6 +32,7 @@
                 <span class="btn" id="btn_italic"><i>I</i></span>
                 <span class="btn" id="btn_underline"><u>U</u></span>
                 <span class="btn" id="btn_strike"><s>S</s></span>
+                <span class="btn" id="btn_php"><b>PHP</b><span>
             </div>
             <?php
             echo $form->field($commentForm, 'comment')
