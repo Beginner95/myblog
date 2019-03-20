@@ -92,7 +92,7 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		$intro.prependTo($sidebar);
 	});
 
-    $('#btn_bold, #btn_italic, #btn_underline, #btn_strike, #btn_php').bind('click', function(){
+    $('#btn_bold, #btn_italic, #btn_underline, #btn_strike, #btn_code').bind('click', function(){
     	var textAreaName = 'CommentForm[comment]';
         var tagStart = '[' + $(this)[0].innerText + ']';
         var tagEnd = '[/' + $(this)[0].innerText + ']';

@@ -29,8 +29,8 @@ class CommentForm extends Model
             '[/U]' => '</u>',
             '[S]' => '<s>',
             '[/S]' => '</s>',
-            '[PHP]' => '<pre>',
-            '[/PHP]' => '</pre>'
+            '[CODE]' => '<pre>',
+            '[/CODE]' => '</pre>'
         ];
         $comment = new Comment();
         $comment->text = strtr($this->comment, $tags);
