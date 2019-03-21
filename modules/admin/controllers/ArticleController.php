@@ -185,4 +185,12 @@ class ArticleController extends Controller
             'tags' => $tags
         ]);
     }
+
+    public function actionDisallow($id)
+    {
+        $article = Article::findOne($id);
+        if ($article->disallow()) {
+            return $this->redirect(['index']);
+        }
+    }
 }
