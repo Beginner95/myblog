@@ -229,4 +229,10 @@ class Article extends \yii\db\ActiveRecord
     {
         return $this->status;
     }
+
+    public function allow()
+    {
+        $this->status = self::STATUS_ALLOW;
+        return $this->save(false);
+    }
 }
