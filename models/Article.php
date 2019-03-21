@@ -29,6 +29,10 @@ class Article extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+
+    const STATUS_ALLOW = 1;
+    const STATUS_DISALLOW = 0;
+
     public static function tableName()
     {
         return 'article';
