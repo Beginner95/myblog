@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\ArticleSearch */
@@ -45,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'html',
                 'label' => 'Status',
                 'value' => function ($data) {
-                    return empty($data->status) ? '<span class="label label-success">Active</span>' : '<span class="label label-warning">Inactive</span>';
+                    return ($data->isAllowed()) ? '<a href="' . Url::toRoute(['article/disallow', 'id' => $data->id]) . '" class="label label-warning">Disallow</span></a>' : '<a href="' . Url::toRoute(['article/allow', 'id' => $data->id]) . '" class="label label-success">Allow</a>';
                 }
             ],
             [
