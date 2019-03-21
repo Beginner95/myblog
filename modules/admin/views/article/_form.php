@@ -45,7 +45,7 @@ mihaildev\elfinder\Assets::noConflict($this);
         echo DatePicker::widget([
             'name' => 'Article[date]',
             'type' => DatePicker::TYPE_COMPONENT_APPEND,
-            'value' => $model->date,
+            'value' => !empty($model->date) ? $model->date : date('Y-m-d'),
             'pluginOptions' => [
                 'autoclose'=>true,
                 'format' => 'yyyy-mm-dd'
