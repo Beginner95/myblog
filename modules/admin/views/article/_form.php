@@ -27,16 +27,20 @@ mihaildev\elfinder\Assets::noConflict($this);
     ?>
 
     <?php
-
-        if ($model->isAllowed()) {
+        if ($model->isAllowed() === 1) {
             $status = [
-                '' => 'Allow',
-                1 => 'Disallow'
+                1 => 'Allow',
+                0 => 'Disallow'
+            ];
+        } else if ($model->isAllowed() === 0) {
+            $status = [
+                0 => 'Disallow',
+                1 => 'Allow'
             ];
         } else {
             $status = [
-                1 => 'Disallow',
-                '' => 'Allow'
+                1 => 'Allow',
+                0 => 'Disallow'
             ];
         }
         echo $form->field($model, 'status')->dropDownList($status);
