@@ -196,8 +196,8 @@ class ArticleController extends Controller
 
     public function actionAllow($id)
     {
-        $comment = Article::findOne($id);
-        if ($comment->allow()) {
+        $article = Article::findOne($id);
+        if ($article->allow()) {
             return $this->redirect(['index']);
         }
     }
