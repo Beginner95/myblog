@@ -29,4 +29,9 @@ class ArticleCategory extends \yii\db\ActiveRecord
             'category_id' => 'Category ID'
         ];
     }
+
+    public function getArticle()
+    {
+        return $this->hasOne(Article::className(), ['id' => 'article_id']);
+    }
 }
