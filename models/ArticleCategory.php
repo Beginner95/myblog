@@ -20,4 +20,13 @@ class ArticleCategory extends \yii\db\ActiveRecord
 
         ];
     }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'article_id' => 'Article ID',
+            'category_id' => 'Category ID'
+        ];
+    }
 }
