@@ -34,4 +34,9 @@ class ArticleCategory extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Article::className(), ['id' => 'article_id']);
     }
+
+    public function getCategory()
+    {
+        return $this->hasOne(Category::className(), ['id' => 'category_id']);
+    }
 }
