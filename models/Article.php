@@ -102,12 +102,14 @@ class Article extends \yii\db\ActiveRecord
             ->viaTable('article_to_category', ['article_id' => 'id']);
     }
 
-    public function saveCategory($category_id)
+    public function saveCategory($categories)
     {
-        $category = Category::findOne($category_id);
-        if ($category != null) {
-            $this->link('category', $category);
-            return true;
+        if (is_array($categories)) {
+            $this->clearCurrentCategories();
+            foreach ($categories as $category_id) {
+                $category = Category::findOne($category_id);
+                $this->link('categories', $category);
+            }
         }
     }
 
