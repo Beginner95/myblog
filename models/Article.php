@@ -102,6 +102,12 @@ class Article extends \yii\db\ActiveRecord
             ->viaTable('article_to_category', ['article_id' => 'id']);
     }
 
+    public function getSelectedCategories()
+    {
+        $selectedCategories = $this->getCategories()->select('id')->asArray()->all();
+        return ArrayHelper::getColumn($selectedCategories, 'id');
+    }
+
     public function saveCategory($categories)
     {
         if (is_array($categories)) {
