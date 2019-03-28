@@ -113,6 +113,11 @@ class Article extends \yii\db\ActiveRecord
         }
     }
 
+    public function clearCurrentCategories()
+    {
+        ArticleCategory::deleteAll(['article_id' => $this->id]);
+    }
+
     public function getTags()
     {
         return $this->hasMany(Tag::className(), ['id' => 'tag_id'])
