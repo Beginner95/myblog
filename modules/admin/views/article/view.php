@@ -61,7 +61,11 @@ nezhelskoy\highlight\HighlightAsset::register($this);
             [
                 'label' => 'Category',
                 'value' => function ($data) {
-                    return (!empty($data->category->title)) ? $data->category->title : 'No category';
+                    $categories = [];
+                    foreach ($data->categories as $category) {
+                        $categories[] = $category->title;
+                    }
+                    return implode(', ', $categories);
                 }
             ]
         ],
