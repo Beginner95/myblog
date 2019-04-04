@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\data\Pagination;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "category".
@@ -44,7 +45,8 @@ class Category extends \yii\db\ActiveRecord
 
     public function getArticles()
     {
-        return $this->hasMany(Article::className(), ['category_id' => 'id']);
+        return $this->hasMany(Article::className(), ['id' => 'article_id'])
+            ->viaTable('article_to_category', ['category_id' => 'id']);
     }
 
     public function getArticlesCount()
