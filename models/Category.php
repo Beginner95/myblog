@@ -51,7 +51,7 @@ class Category extends \yii\db\ActiveRecord
 
     public function getArticlesCount()
     {
-        return $this->getArticles()->where(['status' => null])->count();
+        return $this->getArticles()->count();
     }
 
     public static function getAll()
@@ -61,19 +61,17 @@ class Category extends \yii\db\ActiveRecord
 
     public static function getArticlesByCategory($id)
     {
-        $query = Article::find()->where(['category_id' => $id, 'status' => null]);
+//        $query = Article::find()->where(['category_id' => $id, 'status' => null]);
+//        $count = $query->count();
+//        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 5]);
+//        $articles = $query->offset($pagination->offset)
+//            ->limit($pagination->limit)
+//            ->all();
+//
+//        $data['articles'] = $articles;
+//        $data['pagination'] = $pagination;
 
-        $count = $query->count();
-
-        $pagination = new Pagination(['totalCount' => $count, 'pageSize' => 5]);
-
-        $articles = $query->offset($pagination->offset)
-            ->limit($pagination->limit)
-            ->all();
-
-        $data['articles'] = $articles;
-        $data['pagination'] = $pagination;
-
+        $data = Category::findOne($id);
         return $data;
     }
 }

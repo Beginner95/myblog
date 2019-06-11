@@ -125,7 +125,7 @@ class SiteController extends Controller
         $categories = Category::getAll();
         return $this->render('category', [
             'articles' => $data['articles'],
-            'pagination' => $data['pagination'],
+//            'pagination' => $data['pagination'],
             'popular' => $popular,
             'recent' => $recent,
             'categories' => $categories

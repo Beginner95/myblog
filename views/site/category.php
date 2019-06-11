@@ -33,15 +33,15 @@ $this->title = 'My Yii Application';
         </article>
     <?php endforeach; ?>
     <?php
-    echo LinkPager::widget([
-        'pagination' => $pagination,
-        //Css option for container
-        'options' => ['class' => 'actions pagination'],
-        'prevPageLabel' => 'PREVIOUS PAGE',
-        'nextPageLabel' => 'Next Page',
-        'activePageCssClass' => 'active',
-        'linkOptions' => ['class' => 'button '],
-    ]);
+//    echo LinkPager::widget([
+//        'pagination' => $pagination,
+//        //Css option for container
+//        'options' => ['class' => 'actions pagination'],
+//        'prevPageLabel' => 'PREVIOUS PAGE',
+//        'nextPageLabel' => 'Next Page',
+//        'activePageCssClass' => 'active',
+//        'linkOptions' => ['class' => 'button '],
+//    ]);
     ?>
 </div>
 
