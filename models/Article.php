@@ -12,6 +12,7 @@ use yii\web\UploadedFile;
  *
  * @property int $id
  * @property string $title
+ * @property string $url
  * @property string $description
  * @property string $content
  * @property string $date
@@ -46,10 +47,11 @@ class Article extends \yii\db\ActiveRecord
         return [
             [['status'], 'integer'],
             [['title'], 'required'],
-            [['title', 'description', 'content'], 'string'],
+            [['title', 'description', 'content', 'url'], 'string'],
             [['date'], 'date', 'format' => 'php:Y-m-d'],
             [['date'], 'default', 'value' => date('Y-m-d')],
-            [['title'], 'string', 'max' => 255]
+            [['title'], 'string', 'max' => 255],
+            [['url'], 'string', 'max' => 255]
         ];
     }
 
@@ -188,6 +190,7 @@ class Article extends \yii\db\ActiveRecord
     public function saveArticle()
     {
         $this->user_id = Yii::$app->user->id;
+        $this->url = $this->translate($this->title);
         return $this->save(false);
     }
 
@@ -254,5 +257,41 @@ class Article extends \yii\db\ActiveRecord
     {
         $this->status = self::STATUS_DISALLOW;
         return $this->save(false);
+    }
+
+    public function translate($title)
+    {
+        $alf = [
+            'а' => 'a',   'б' => 'b',   'в' => 'v',
+            'г' => 'g',   'д' => 'd',   'е' => 'e',
+            'ё' => 'e',   'ж' => 'zh',  'з' => 'z',
+            'и' => 'i',   'й' => 'y',   'к' => 'k',
+            'л' => 'l',   'м' => 'm',   'н' => 'n',
+            'о' => 'o',   'п' => 'p',   'р' => 'r',
+            'с' => 's',   'т' => 't',   'у' => 'u',
+            'ф' => 'f',   'х' => 'h',   'ц' => 'c',
+            'ч' => 'ch',  'ш' => 'sh',  'щ' => 'sch',
+            'ь' => '',    'ы' => 'y',   'ъ' => '',
+            'э' => 'e',   'ю' => 'yu',  'я' => 'ya',
+
+            'А' => 'A',   'Б' => 'B',   'В' => 'V',
+            'Г' => 'G',   'Д' => 'D',   'Е' => 'E',
+            'Ё' => 'E',   'Ж' => 'Zh',  'З' => 'Z',
+            'И' => 'I',   'Й' => 'Y',   'К' => 'K',
+            'Л' => 'L',   'М' => 'M',   'Н' => 'N',
+            'О' => 'O',   'П' => 'P',   'Р' => 'R',
+            'С' => 'S',   'Т' => 'T',   'У' => 'U',
+            'Ф' => 'F',   'Х' => 'H',   'Ц' => 'C',
+            'Ч' => 'Ch',  'Ш' => 'Sh',  'Щ' => 'Sch',
+            'Ь' => '',    'Ы' => 'Y',   'Ъ' => '',
+            'Э' => 'E',   'Ю' => 'Yu',  'Я' => 'Ya',
+        ];
+
+        $title = strtr($title, $alf);
+        $title = mb_strtolower($title);
+        $title = mb_ereg_replace('[^-0-9a-z]', '-', $title);
+        $title = mb_ereg_replace('[-]+', '-', $title);
+        $title = trim($title, '-');
+        return $title;
     }
 }
