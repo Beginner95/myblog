@@ -20,11 +20,11 @@ use yii\helpers\Url;
             <?php foreach ($popular as $article) : ?>
                 <article class="mini-post">
                     <header>
-                        <h3><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h3>
+                        <h3><a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>"><?php echo $article->title; ?></a></h3>
                         <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                         <a href="#" class="author"><img src="<?php echo $article->author->getImage(); ?>" alt="<?php echo $article->author->name; ?>" /></a>
                     </header>
-                    <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
+                    <a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
                 </article>
             <?php endforeach; ?>
         </div>
@@ -38,10 +38,10 @@ use yii\helpers\Url;
                 <li>
                     <article>
                         <header>
-                            <h3><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h3>
+                            <h3><a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>"><?php echo $article->title; ?></a></h3>
                             <time class="published" datetime="<?php echo $article->date; ?>"><?php echo $article->getDate(); ?></time>
                         </header>
-                        <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
+                        <a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>" class="image"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
                     </article>
                 </li>
             <?php endforeach; ?>

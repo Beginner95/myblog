@@ -81,13 +81,13 @@ class SiteController extends Controller
     }
 
     /**
-     * @param $id
+     * @param $url
      * @return string
      * @throws NotFoundHttpException
      */
-    public function actionView($id)
+    public function actionView($url)
     {
-        $article = Article::findOne($id);
+        $article = Article::findOne(['url' => $url]);
 
         if (empty($article)) {
             throw new NotFoundHttpException();
