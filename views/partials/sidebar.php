@@ -61,6 +61,14 @@ use yii\helpers\Url;
         </ul>
     </section>
 
+    <h2>Useful links</h2>
+    <section>
+        <!-- Begin SPRINTHOST.RU rotator code -->
+        <iframe frameborder="0" width="336" height="280" hspace="0" vspace="0" scrolling="no"
+                src="https://ad.sprinthost.ru/caroussel?pin=11894&r=11&enc=utf8"></iframe>
+        <!-- End SPRINTHOST.RU rotator code -->
+    </section>
+
     <!-- About -->
     <section class="blurb">
         <h2>About</h2>
