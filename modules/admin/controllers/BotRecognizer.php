@@ -102,4 +102,16 @@ class BotRecognizer
         return Yii::app()->request->getUserAgent();
     }
 
+    /**
+     * get bot definitions from file, put them to cache and return it
+     * @return array
+     */
+    private function _getBotsInfo () {
+        if ( ( $botsInfo = Yii::app()->cache->get('botsRecognizer_botsInfo') ) === false ) {
+            $botsInfo = $this->_readBotsFile();
+            Yii::app()->cache->set('botsRecognizer_botsInfo', $botsInfo);
+        }
+        return $botsInfo;
+    }
+
 }
