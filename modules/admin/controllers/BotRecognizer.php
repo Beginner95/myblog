@@ -71,4 +71,18 @@ class BotRecognizer
         $this->botName = false;
         return false;
     }
+
+    /**
+     * get bot name (i.e. GoogleBot, YandexBot etc)
+     * @return mixed bot name if is bot or false if is not bot
+     */
+    public function getBotName () {
+        if ( $this->botVerifyChecked ) {
+            return $this->botName;
+        } elseif ( $this->getIsBot() ) {
+            return $this->botName;
+        }
+
+        return false;
+    }
 }
