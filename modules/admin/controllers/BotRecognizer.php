@@ -85,4 +85,13 @@ class BotRecognizer
 
         return false;
     }
+
+    /**
+     * get bot ip
+     * @return string ip of bot
+     */
+    public function getBotIp () {
+        return Yii::app()->request->getUserHostAddress();
+    }
+
 }
