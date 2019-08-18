@@ -9,6 +9,7 @@
 namespace app\modules\admin\controllers;
 
 
+use Exception;
 use Yii;
 
 class BotRecognizer
@@ -112,6 +113,44 @@ class BotRecognizer
             Yii::app()->cache->set('botsRecognizer_botsInfo', $botsInfo);
         }
         return $botsInfo;
+    }
+
+    /**
+     * read bot definitions file
+     * @return array with bot definitions
+     * @throws Exception when no file exists
+     */
+    private function _readBotsFile() {
+        if ( $this->botsFile ) {
+            $file = $this->botsFile;
+        } else {
+            $file = dirname(__FILE__) .'/bots.txt';
+        }
+        if ( !file_exists($file) ) {
+            throw new Exception('Bots file not found');
+        }
+
+        $retArray = array();
+        $lines = @file($file);
+        foreach( $lines AS $line ) {
+            $arr = explode('|', trim($line));
+            if( sizeof($arr) < 4 ) {
+                continue;
+            }
+            $botName = trim($arr[0]);
+            $ip1 = $this->_fromIpToX32(trim($arr[1]));
+            $ip2 = $this->_fromIpToX32(trim($arr[2]));
+            $agent = trim($arr[3]);
+
+            $retArray[$botName][] = array(
+                'botName' => $botName,
+                'botIpStart' => $ip1,
+                'botIpEnd' => $ip2,
+                'botAgent' => $agent,
+            );
+        }
+
+        return $retArray;
     }
 
 }
