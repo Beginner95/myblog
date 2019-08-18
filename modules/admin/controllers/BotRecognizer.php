@@ -94,4 +94,12 @@ class BotRecognizer
         return Yii::app()->request->getUserHostAddress();
     }
 
+    /**
+     * get useragent of bot
+     * @return string user agent of bot
+     */
+    public function getBotUserAgent () {
+        return Yii::app()->request->getUserAgent();
+    }
+
 }
