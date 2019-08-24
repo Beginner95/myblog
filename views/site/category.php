@@ -12,7 +12,7 @@ $this->title = 'My Yii Application';
         <article class="post">
             <header>
                 <div class="title">
-                    <h2><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>"><?php echo $article->title; ?></a></h2>
+                    <h2><a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>"><?php echo $article->title; ?></a></h2>
                     <p><?php echo $article->description; ?></p>
                 </div>
                 <div class="meta">
@@ -20,11 +20,11 @@ $this->title = 'My Yii Application';
                     <a href="#" class="author"><span class="name"><?php echo $article->author->name; ?></span><img src="<?php echo $article->author->getImage(); ?>" alt="" /></a>
                 </div>
             </header>
-            <a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
+            <a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>" class="image featured"><img src="<?php echo $article->getImage(); ?>" alt="" /></a>
             <p><?php echo $article->getSomeArticle($article->content); ?>... </p>
             <footer>
                 <ul class="actions">
-                    <li><a href="<?php echo Url::toRoute(['site/view', 'id' => $article->id]); ?>" class="button large">Continue Reading</a></li>
+                    <li><a href="<?php echo Url::toRoute(['site/view', 'url' => $article->url]); ?>" class="button large">Continue Reading</a></li>
                 </ul>
                 <ul class="stats">
                     <li><a href="#" class="icon fa-eye"><?php echo (int)$article->viewed; ?></a></li>
