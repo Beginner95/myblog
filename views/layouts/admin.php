@@ -42,7 +42,8 @@ AppAsset::register($this);
             ['label' => 'Article', 'url' => ['/admin/article/index']],
             ['label' => 'Category', 'url' => ['/admin/category/index']],
             ['label' => 'Comments', 'url' => '/admin/comment/index'],
-            ['label' => 'Tag', 'url' => ['/admin/tag/index']]
+            ['label' => 'Tag', 'url' => ['/admin/tag/index']],
+            ['label' => 'User', 'url' => ['/admin/user/index']]
         ],
     ]);
     NavBar::end();
