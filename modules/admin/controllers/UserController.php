@@ -2,9 +2,11 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\User;
 use app\models\UserSearch;
 use Yii;
 use yii\web\Controller;
+use yii\web\NotFoundHttpException;
 
 class UserController extends Controller
 {
@@ -17,5 +19,14 @@ class UserController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }
+
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }
