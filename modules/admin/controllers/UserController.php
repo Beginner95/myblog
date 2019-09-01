@@ -21,6 +21,13 @@ class UserController extends Controller
         ]);
     }
 
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+
+        return $this->redirect(['index']);
+    }
+
     protected function findModel($id)
     {
         if (($model = User::findOne($id)) !== null) {
