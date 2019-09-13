@@ -193,7 +193,7 @@ class SiteController extends Controller
             $model->load(Yii::$app->request->post());
             if ($model->saveComment($id)) {
                 Yii::$app->getSession()->setFlash('comment', 'Your comment will be added soon!');
-                return $this->redirect(['site/view', 'id' => $id]);
+                return $this->redirect(Yii::$app->request->referrer);
             }
         }
     }
